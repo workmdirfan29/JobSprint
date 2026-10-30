@@ -1,267 +1,170 @@
-<div align="center">
+<h1 align="center" >JobSprint</h1>
 
-# SypharConnect
+### A Modern Job Portal Connecting Job Seekers & Recruiters
 
-**A modern job-hunt platform that connects job seekers and recruiters.**
+JobSprint is a full-stack job portal that simplifies the hiring process by connecting job seekers with recruiters. Users can explore job opportunities, apply for jobs, track applications, and manage their profiles, while recruiters can post jobs and manage applicants.
 
-Find jobs, apply in a click, track every application, post openings and review applicants, all in one place.
+![JobSprint Homepage](YOUR_IMAGE_URL_HERE)
 
-![SypharConnect home page](docs/screenshots/home.png)
+<!-- Add your homepage screenshot URL below -->
 
-</div>
+## ✨ Key Features
 
----
+### 👨‍💻 For Job Seekers
 
-## Table of contents
+- Secure user authentication
+- Browse and search job opportunities
+- Filter jobs by location, role, job type, and salary
+- Apply for jobs with resume upload
+- Save jobs for later
+- Track application status
+- Manage personal profiles and skills
 
-- [About the project](#about-the-project)
-- [Features](#features)
-- [Tech stack](#tech-stack)
-- [Project structure](#project-structure)
-- [Getting started](#getting-started)
-- [Environment variables](#environment-variables)
-- [Available scripts](#available-scripts)
-- [Application routes](#application-routes)
-- [API overview](#api-overview)
-- [File uploads](#file-uploads)
-- [Security notes](#security-notes)
-- [Deployment](#deployment)
-- [Known limitations](#known-limitations)
-- [Author](#author)
+### 🏢 For Recruiters
 
-## About the project
+- Register and manage companies
+- Create and manage job postings
+- Upload company logos
+- View and manage applicants
+- Accept or reject applications
+- Track pending applications
 
-SypharConnect is a full-stack MERN job portal with two kinds of accounts:
+### 🌟 Additional Features
 
-- **Job seekers (students)** search and filter jobs, save the ones they like, apply with their resume and follow the status of each application.
-- **Recruiters** register their companies, publish job postings with a rich-text description, and review, accept or reject applicants from a dashboard.
+- Responsive user interface
+- Light and dark themes
+- JWT-based authentication
+- Secure file uploads
+- Rich-text job descriptions
 
-The app has a first-visit onboarding flow, light and dark themes, and a responsive layout that works from phones to wide desktops.
+## 🛠️ Tech Stack
 
-## Features
+| Category          | Technologies                 |
+| ----------------- | ---------------------------- |
+| Frontend          | React 19, TypeScript, Vite   |
+| Styling           | Tailwind CSS 4, shadcn/ui    |
+| State Management  | Redux Toolkit, Redux Persist |
+| Routing           | React Router 7               |
+| Backend           | Node.js, Express.js          |
+| Database          | MongoDB, Mongoose            |
+| Authentication    | JWT, bcryptjs                |
+| File Uploads      | Multer                       |
+| API Communication | Axios                        |
 
-### For job seekers
+## 📂 Project Structure
 
-- **Onboarding** shown once per device, then straight to sign-up or login.
-- **Job listings** with multi-select filters: location, job type, role and salary range.
-- **Search page** to find jobs by role, one or more cities (type your own too) and years of experience.
-- **Save for later** bookmarks, listed on the profile page.
-- **One-click apply.** If no resume is on file, the app asks for one first, then applies.
-- **Applied Jobs page** with a status summary (pending, accepted, rejected) and a table of applications.
-- **Profile** with a cover banner, photo, bio, skills and resume; photos go through a LinkedIn-style **crop editor** (zoom and straighten).
-
-### For recruiters
-
-- **Company management:** register a company, upload a logo, edit its details.
-- **Post a job** with a rich-text editor (headings, bold, lists, quotes), a job-type dropdown, experience, salary in LPA, positions and requirements as tags.
-- **Applicants dashboard:** per-job applicant counts, a navbar badge with the number still waiting for a decision, and a side panel with each applicant's contact details, bio, skills and resume.
-- **Accept or reject** applicants; the badge and status update immediately.
-
-### Across the app
-
-- Light and dark themes with a toggle (no "system" mode).
-- JWT authentication in an HTTP cookie, with automatic sign-out when a session expires.
-- Role-aware navigation, logo and footer.
-- Sanitised rich text, ownership checks on the server, and file-type and size limits on uploads.
-
-## Tech stack
-
-**Client** (`/client`)
-
-| Area | Technology |
-| --- | --- |
-| Framework | React 19, TypeScript, Vite 7 |
-| Styling | Tailwind CSS 4, shadcn/ui (Radix UI), Tailwind Typography, `tw-animate-css` |
-| State | Redux Toolkit, redux-persist |
-| Routing | React Router 7 |
-| Data and forms | Axios, TanStack Table |
-| Rich text | Tiptap 3, DOMPurify |
-| Images | react-easy-crop |
-| UI extras | lucide-react, Sonner (toasts), Motion (animations) |
-
-**Backend** (`/backend`)
-
-| Area | Technology |
-| --- | --- |
-| Runtime and framework | Node.js, Express 5 (ES modules) |
-| Database | MongoDB with Mongoose 8 |
-| Auth | JSON Web Tokens in cookies, bcryptjs |
-| Uploads | Multer (disk storage) |
-| Security | sanitize-html, CORS with credentials |
-| Tooling | Nodemon |
-
-## Project structure
-
-```
-syphar-connect/
+```text
+JobSprint/
 ├── backend/
-│   ├── index.js              # Express app and server entry point
-│   ├── .env.sample           # Environment variable template
-│   └── src/
-│       ├── config/           # Reads UPLOAD_DIR / BASE_URL
-│       ├── controllers/      # user, company, job, application logic
-│       ├── middlewares/      # auth check, upload handling
-│       ├── models/           # Mongoose models
-│       ├── routes/           # API routes
-│       └── utils/            # db connection, uploads, HTML sanitising
+│   ├── src/
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── middlewares/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── utils/
+│   ├── index.js
+│   └── package.json
+│
 ├── client/
-│   └── src/
-│       ├── admin/            # recruiter screens (companies, jobs, applicants)
-│       ├── auth/             # login and signup
-│       ├── components/       # navbar, footer, shared UI
-│       ├── hooks/            # data-fetching and behaviour hooks
-│       ├── pages/            # home, jobs, search, profile, legal, ...
-│       ├── redux/            # store, slices and types
-│       ├── routes/           # route guards
-│       └── shared/           # reusable pieces (editor, crop dialog, ...)
-├── docs/screenshots/         # images used in this README
-└── uploads/                  # created at runtime, git-ignored
+│   ├── src/
+│   │   ├── admin/
+│   │   ├── auth/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── pages/
+│   │   ├── redux/
+│   │   ├── routes/
+│   │   └── shared/
+│   └── package.json
+│
+├── docs/
+│   └── screenshots/
+│
+├── .gitignore
+├── DEPLOYMENT.md
+└── README.md
 ```
 
-## Getting started
+## ⚙️ Getting Started
 
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) 20 or newer, and npm
-- A MongoDB database, either local (`mongod`) or [MongoDB Atlas](https://www.mongodb.com/atlas)
-
-### 1. Clone and install
+### 1. Clone the Repository
 
 ```bash
-git clone git@github.com:xshshahab/syphar-connect.git
-cd syphar-connect
-
-cd backend && npm install
-cd ../client && npm install
+git clone https://github.com/workmdirfan29/JobSprint
+cd JobSprint
 ```
 
-### 2. Configure the backend
+### 2. Install Dependencies
+
+**Backend**
 
 ```bash
 cd backend
-cp .env.sample .env
+npm install
 ```
 
-Then edit `backend/.env` (see [Environment variables](#environment-variables)). The `.env` file is git-ignored and must never be committed.
-
-### 3. Run the app
-
-Use two terminals:
+**Frontend**
 
 ```bash
-# Terminal 1: API on http://localhost:8080
+cd ../client
+npm install
+```
+
+### 3. Environment Variables
+
+Create a `.env` file inside the `backend` directory and configure:
+
+```env
+PORT=8080
+MONGO_URI=your_mongodb_connection_string
+SECRET_KEY=your_secret_key
+```
+
+### 4. Run the Application
+
+**Start Backend**
+
+```bash
 cd backend
 npm run dev
+```
 
-# Terminal 2: client on http://localhost:5173
+**Start Frontend** (in a separate terminal)
+
+```bash
 cd client
 npm run dev
 ```
 
-Open <http://localhost:5173>.
+## 🔒 Security
 
-> In development the client calls the API at `http://localhost:8080` and the backend allows `http://localhost:5173`. Override them with `VITE_API_URL` (client, build time) and `CLIENT_URL` (backend) if you use other addresses.
+- Passwords are hashed using bcrypt.
+- JWT-based authentication using HTTP cookies.
+- Protected routes and authorization.
+- Secure file uploads with file-type and size validation.
+- Environment variables are excluded from Git.
 
-## Environment variables
+## 🚀 Deployment
 
-Set these in `backend/.env`:
+JobSprint is deployed using:
 
-| Variable | Description |
-| --- | --- |
-| `MONGO_URI` | MongoDB connection string, e.g. `mongodb://127.0.0.1:27017/syphar-connect` |
-| `SECRET_KEY` | Secret used to sign JWTs. Use a long random value. |
-| `PORT` | API port (default `8080`; the client expects `8080`). |
-| `UPLOAD_DIR` | Folder for uploaded files: an absolute path, or relative to `backend/`. Use `../uploads` in development and a persistent path in production, e.g. `/var/data/syphar-uploads`. |
-| `BASE_URL` | Optional. Public URL of the API, used in links to uploaded files. Defaults to the request host. Set it in production, e.g. `https://jobs.shahabuddin.in`. |
-| `NODE_ENV` | Set to `production` on a live server so the login cookie is HTTPS-only. |
-| `CLIENT_URL` | Optional. Browser origin allowed by CORS when the client is on a different address than the API (default `http://localhost:5173`). |
+- **Frontend:** Vercel
+- **Backend:** Render
+- **Database:** MongoDB Atlas
 
-## Available scripts
+🌐 **Live Demo:** [Visit JobSprint](YOUR_VERCEL_URL)
 
-**Backend** (`/backend`)
+## About the Author
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the API with Nodemon (auto-reload) |
+**Md Irfan**  
+Full Stack Developer | MERN Stack Developer
 
-**Client** (`/client`)
+- LinkedIn: [Connect with me](https://www.linkedin.com/in/mdirfan2470/)
+- GitHub: [Visit my GitHub](https://github.com/workmdirfan29/)
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the Vite dev server |
-| `npm run build` | Type-check and build for production |
-| `npm run preview` | Preview the production build |
-| `npm run lint` | Run ESLint |
+---
 
-## Application routes
-
-| Route | Who | Page |
-| --- | --- | --- |
-| `/welcome` | Everyone | First-visit onboarding |
-| `/auth/login`, `/auth/signup` | Guests | Authentication |
-| `/` | Logged in | Home |
-| `/jobs`, `/search`, `/description/:id` | Logged in | Browse, search and view jobs |
-| `/profile` | Logged in | Profile (students: saved jobs; recruiters: activity) |
-| `/applied-jobs` | Students | Applied jobs and statuses |
-| `/admin/companies`, `/admin/companies/register-company`, `/admin/companies/:id` | Recruiters | Company management |
-| `/admin/ad-jobs`, `/admin/ad-jobs/post-job`, `/admin/ad-jobs/:id/applicants` | Recruiters | Job management and applicants |
-| `/admin/applicants` | Recruiters | Applicants overview |
-| `/about`, `/contact`, `/privacy`, `/terms` | Everyone | Information pages |
-
-## API overview
-
-All endpoints except register, login and logout require the JWT cookie.
-
-| Base path | Endpoints |
-| --- | --- |
-| `/api/auth/user` | `POST /register`, `POST /login`, `GET /logout`, `PUT /profile/update-profile/:id`, `GET /fetch-all-users` |
-| `/api/v1` (companies) | `POST /register-company`, `GET /companies`, `GET /company/:id`, `PUT /company/update-company/:id`, `DELETE /company/delete/:id` |
-| `/api/job` | `POST /create-job`, `GET /all-job`, `GET /fetch-by-id/:id`, `GET /admin-job`, `GET /saved`, `POST` and `DELETE /save/:id` |
-| `/api/application` | `GET /apply/:id`, `GET /applied-job`, `GET /applicants/:id`, `POST /update-status/:id` |
-
-`GET /api/job/all-job` accepts these query parameters:
-
-- `keyword`: free-text match on title and description.
-- `location`, `jobType`, `industry` (role), `salary`: repeat a parameter to select several values. Values within one parameter are OR-ed, different parameters are AND-ed. `salary` takes ranges such as `6-10` or `20+` (LPA).
-- `experience`: years of experience; returns jobs asking for that many years or fewer.
-
-## File uploads
-
-Profile photos, company logos and resumes are saved to the folder set in `UPLOAD_DIR` and served from `/uploads/<filename>`.
-
-- Allowed types: JPG, PNG, WEBP, GIF and PDF.
-- Maximum size: 5 MB.
-- Files get random names.
-- The `uploads/` folder is git-ignored, so uploaded files are never committed.
-
-## Security notes
-
-- Passwords are hashed with bcrypt and never sent back to the client.
-- Recruiters can only view or change their own companies, jobs and applicants; the server enforces this.
-- Job descriptions are sanitised with an allow-list on the server and again when shown.
-- Search keywords are escaped before being used in database queries.
-- `.env` files are git-ignored. Keep real secrets only in your local `.env` or your host's environment settings.
-
-## Deployment
-
-The recommended setup is a single VPS with Nginx serving the built client and proxying `/api` and `/uploads` to the Node backend, on one domain (for example `jobs.shahabuddin.in`). That keeps cookies simple and needs no CORS.
-
-**Step-by-step guide: [DEPLOYMENT.md](DEPLOYMENT.md)** covers DNS for a subdomain, Node, MongoDB, PM2, Nginx, free HTTPS, updates, backups and troubleshooting.
-
-Uploaded files are stored on disk, so the backend needs a host with a persistent disk (a VPS, or Render/Railway with a volume). Serverless hosts such as Vercel cannot keep those files.
-
-## Known limitations
-
-- The Contact form shows a thank-you message but does not send the message anywhere yet.
-- The Privacy Policy and Terms of Service are general template text; have them reviewed before launch.
-- There is no automated test suite yet.
-
-## Author
-
-**Md. Shahabuddin**
-
-- LinkedIn: <https://www.linkedin.com/in/mdshahabuddin82/>
-- X: <https://x.com/imdshahab82>
-- Instagram: <https://www.instagram.com/imdshahab.82>
-
-Licensed under the ISC license.
+<p align="center">
+  Made   by <strong>Md Irfan</strong>
+</p>
