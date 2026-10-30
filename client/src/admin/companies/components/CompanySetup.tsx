@@ -230,7 +230,7 @@ const CompanySetup: React.FC = () => {
                 id="website"
                 name="website"
                 type="url"
-                placeholder="https://www.sypharconnect.com"
+                placeholder="https://www.jobsprint.com"
                 value={input.website}
                 onChange={inputChangeEventHandler}
               />

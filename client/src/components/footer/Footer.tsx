@@ -70,8 +70,8 @@ export default function Footer() {
   const audienceLinks = !user
     ? guestLinks
     : user.role === "recruiter"
-    ? recruiterLinks
-    : studentLinks;
+      ? recruiterLinks
+      : studentLinks;
   const links = [exploreLinks, audienceLinks, companyLinks, legalLinks];
 
   return (
@@ -164,7 +164,10 @@ export default function Footer() {
         </div>
         <div className="mt-12 flex flex-wrap items-end justify-between gap-6 border-t py-6">
           <small className="text-muted-foreground order-last block text-center text-sm md:order-first">
-            © {new Date().getFullYear()} SypharConnect, All rights reserved
+            © {new Date().getFullYear()}{" "}
+            <span className="font-bold text-black">Job</span>
+            <span className="text-red-500 font-bold">Sprint</span>, All rights
+            reserved
           </small>
         </div>
       </div>

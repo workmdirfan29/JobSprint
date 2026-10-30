@@ -5,10 +5,12 @@ export default function StatsSection() {
         {/* Heading */}
         <div className="relative z-10 max-w-xl space-y-6">
           <h2 className="text-4xl font-medium lg:text-5xl">
-            SypharConnect connects talent with opportunity
+            Job<span className="text-red-500">Sprint</span> connects talent with
+            opportunity
           </h2>
           <p>
-            SypharConnect is more than a job portal.{" "}
+            Job<span className="text-red-500">Sprint</span> is more than a job
+            portal.{" "}
             <span className="font-medium">
               It bridges students and recruiters
             </span>{" "}
@@ -45,18 +47,20 @@ export default function StatsSection() {
           <div className="relative">
             <blockquote className="border-l-4 pl-4">
               <p>
-                SypharConnect has transformed how we find and hire top talent.
-                The platform is intuitive, fast, and connects us directly with
-                qualified students ready to grow their careers.
+                Job<span className="text-red-500">Sprint</span> has transformed
+                how we find and hire top talent. The platform is intuitive,
+                fast, and connects us directly with qualified students ready to
+                grow their careers.
               </p>
 
               <div className="mt-6 space-y-3">
                 <cite className="block font-medium">
-                  Md. Shahabuddin, Founder CEO of SypharConnect
+                  Md. Irfan, Founder CEO of Job
+                  <span className="text-red-500">Sprint</span>
                 </cite>
                 <img
                   className="size-16 rounded-full "
-                  src="https://github.com/xshshahab.png"
+                  src="https://avatars.githubusercontent.com/u/176482473?v=4"
                   alt="Google Logo"
                   height="20"
                   width="auto"

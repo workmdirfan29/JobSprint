@@ -16,9 +16,9 @@ export const APPLICATION_API_ENDPOINT = `${API_BASE}/api/application`;
 export const COMPANY_API_ENDPOINT = `${API_BASE}/api/v1`;
 
 export const SOCIAL_LINKS = {
-  linkedin: "https://www.linkedin.com/in/mdshahabuddin82/",
-  x: "https://x.com/imdshahab82",
-  instagram: "https://www.instagram.com/imdshahab.82",
+  linkedin: "https://www.linkedin.com/in/mdirfan2470/",
+  x: "https://github.com/workmdirfan29",
+  instagram: "https://www.instagram.com/sahil__ik",
 };
 
 export const JOB_TYPES = [

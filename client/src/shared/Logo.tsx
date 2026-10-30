@@ -12,7 +12,7 @@ const Logo: React.FC = () => {
       />
       <div className="flex items-center">
         <h1 className="text-lg font-semibold">
-          Syphar<span className="text-red-500">Connect.</span>
+          Job<span className="text-red-500">Sprint</span>
         </h1>
       </div>
     </div>

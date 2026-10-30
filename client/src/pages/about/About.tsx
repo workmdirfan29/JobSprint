@@ -44,11 +44,9 @@ const About: React.FC = () => {
   return (
     <div className="mx-auto w-full max-w-5xl px-2 py-10 md:py-16 space-y-16">
       <section className="max-w-2xl space-y-4">
-        <h1 className="text-4xl font-semibold lg:text-5xl">
-          About SypharConnect
-        </h1>
+        <h1 className="text-4xl font-semibold lg:text-5xl">About JobSprint</h1>
         <p className="text-muted-foreground">
-          SypharConnect is more than a job portal.{" "}
+          JobSprint is more than a job portal.{" "}
           <span className="font-medium text-foreground">
             It bridges students and recruiters
           </span>{" "}

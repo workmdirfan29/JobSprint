@@ -19,7 +19,7 @@ const content = {
   signup: {
     heading: "Connecting talent with opportunity",
     description:
-      "Join SypharConnect to find your next role or discover your next great hire.",
+      "JobSprint to find your next role or discover your next great hire.",
   },
 };
 
@@ -92,7 +92,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({
         </div>
 
         <p className="relative z-10 text-sm text-muted-foreground">
-          © {new Date().getFullYear()} SypharConnect. All rights reserved.
+          © {new Date().getFullYear()} jobsprint. All rights reserved.
         </p>
       </aside>
 

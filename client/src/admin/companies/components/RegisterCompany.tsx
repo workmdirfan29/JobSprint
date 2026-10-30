@@ -33,7 +33,7 @@ const RegisterCompany: React.FC = () => {
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
-        }
+        },
       );
 
       if (res?.data?.success) {
@@ -65,7 +65,7 @@ const RegisterCompany: React.FC = () => {
             id="company-name"
             name="company-name"
             type="text"
-            placeholder="Enter your company name (e.g., SypharConnect)"
+            placeholder="Enter your company name (e.g., Google)"
           />
         </section>
 

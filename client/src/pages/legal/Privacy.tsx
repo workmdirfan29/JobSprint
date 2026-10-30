@@ -51,8 +51,8 @@ const sections: LegalSection[] = [
 const Privacy: React.FC = () => (
   <LegalPage
     title="Privacy Policy"
-    updated="October 28, 2026"
-    intro="This policy explains what information SypharConnect collects, how it is used, and the choices you have."
+    updated="October 30, 2026"
+    intro="This policy explains what information JobSprint collects, how it is used, and the choices you have."
     sections={sections}
   />
 );

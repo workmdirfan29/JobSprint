@@ -48,7 +48,7 @@ export function LoginForm({
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
         toast.error(
-          error.response?.data?.message || "An unexpected error occurred"
+          error.response?.data?.message || "An unexpected error occurred",
         );
       } else {
         toast.error("An unexpected error occurred");
@@ -80,7 +80,7 @@ export function LoginForm({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
-            placeholder="xshshahab@example.com"
+            placeholder="jhon@example.com"
             required
           />
         </div>
@@ -101,6 +101,7 @@ export function LoginForm({
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               id="password"
+              placeholder="Password"
               type={showPassword ? "text" : "password"}
               required
               className="pr-10"

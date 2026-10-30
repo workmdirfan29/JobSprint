@@ -59,7 +59,7 @@ export function SignupForm({
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
         toast.error(
-          error.response?.data?.message || "An unexpected error occurred"
+          error.response?.data?.message || "An unexpected error occurred",
         );
       } else {
         toast.error("An unexpected error occurred");
@@ -93,7 +93,7 @@ export function SignupForm({
             onChange={(e) => setFullName(e.target.value)}
             id="fullName"
             type="text"
-            placeholder="Syphar"
+            placeholder="Jhon Doe"
             required
           />
         </div>
@@ -106,7 +106,7 @@ export function SignupForm({
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="xshshahab@example.com"
+            placeholder="jhon@example.com"
             required
           />
         </div>

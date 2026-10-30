@@ -3,9 +3,9 @@ import LegalPage, { type LegalSection } from "./LegalPage";
 
 const sections: LegalSection[] = [
   {
-    heading: "Using SypharConnect",
+    heading: "Using JobSprint",
     paragraphs: [
-      "SypharConnect connects job seekers with recruiters. By creating an account or using the platform you agree to these terms.",
+      "JobSprint connects job seekers with recruiters. By creating an account or using the platform you agree to these terms.",
       "You must provide accurate information and keep your login details confidential. You are responsible for activity that happens under your account.",
     ],
   },
@@ -36,7 +36,7 @@ const sections: LegalSection[] = [
   {
     heading: "No guarantee of employment",
     paragraphs: [
-      "SypharConnect is a platform that connects the two sides. We do not guarantee that any application will lead to an interview or job offer, and we are not a party to any employment agreement.",
+      "JobSprint is a platform that connects the two sides. We do not guarantee that any application will lead to an interview or job offer, and we are not a party to any employment agreement.",
     ],
   },
   {
@@ -56,8 +56,8 @@ const sections: LegalSection[] = [
 const Terms: React.FC = () => (
   <LegalPage
     title="Terms of Service"
-    updated="October 28, 2026"
-    intro="Please read these terms carefully before using SypharConnect."
+    updated="October 30, 2026"
+    intro="Please read these terms carefully before using JobSprint."
     sections={sections}
   />
 );
